@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const CategoryCard = ({cart}) => {
 
     const  {
+      _id,
       jobTitle,
       DeadLine,
       Description,
@@ -17,7 +18,7 @@ const CategoryCard = ({cart}) => {
         <h2 ><span className="font-bold "> DeadLine:</span> {DeadLine}</h2>
         <h2><span className="font-bold "> Price range: </span>{MinumumPrice} -{MaximumPrice}</h2>
         <h2><span className="font-bold ">Description: </span>{Description}</h2>
-        <Link  >
+        <Link to ={`/jobDetails/${_id}`} >
           <button className="btn btn-neutral">Bid Now</button>
         </Link>
       </div>
