@@ -1,11 +1,17 @@
+import FrequentlyAskedQuestions from "../../Sections/FrequentlyAskedQuestions";
+import ReviewsAndRatings from "../../Sections/ReviewsAndRatings";
 import Banner from "../Banner/Banner";
+import Category from "../Category/Category";
 
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h2>home is loading...</h2>
+            <Category></Category>
+            <ReviewsAndRatings></ReviewsAndRatings>
+            <FrequentlyAskedQuestions></FrequentlyAskedQuestions>
+            
         </div>
     );
 };

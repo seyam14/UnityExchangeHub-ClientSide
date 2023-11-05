@@ -7,7 +7,8 @@ const ErrorPage = () => {
         </div>
         <div className="mt-10 ">
             <p className="text-4xl ">Error....! </p>
-            <button className=" mt-4 btn btn-error" to='/'>Go back to Home</button>
+            <a href="/"><button className=" mt-4 btn btn-error">Go back to Home</button></a>
+            
         </div>
     </div>
 );

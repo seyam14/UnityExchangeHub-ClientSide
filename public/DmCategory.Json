@@ -1,0 +1,30 @@
+[
+    {
+      "title": "Social Media Marketing Campaign",
+      "deadline": "2023-12-20",
+      "price_range": "$300 - $600",
+      "description": "Plan and execute a social media marketing campaign for my business.",
+      "bid_button": "Bid Now"
+    },
+    {
+      "title": "Search Engine Optimization (SEO)",
+      "deadline": "2024-01-25",
+      "price_range": "$200 - $400",
+      "description": "Optimize my website for better search engine rankings and visibility.",
+      "bid_button": "Bid Now"
+    },
+    {
+      "title": "Pay-Per-Click Advertising",
+      "deadline": "2024-02-15",
+      "price_range": "$150 - $300",
+      "description": "Set up and manage a PPC advertising campaign for my products.",
+      "bid_button": "Bid Now"
+    },
+    {
+      "title": "Email Marketing Campaign",
+      "deadline": "2024-03-05",
+      "price_range": "$100 - $200",
+      "description": "Create and execute an effective email marketing campaign to reach potential customers.",
+      "bid_button": "Bid Now"
+    }
+  ]

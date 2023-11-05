@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-        <div>
+        <div className="mt-4">
         <div
           className="hero h-[75vh]"
           style={{ backgroundImage: "url(https://i.ibb.co/tDF5XM3/Banner.png)" }}
