@@ -13,7 +13,7 @@ const Navbar = () => {
             <NavLink className="font-bold " to='/'>Home</NavLink>
         </li>
         <li>
-           <NavLink className="font-bold"  to='/addjob'>Add Job</NavLink>
+           <NavLink className="font-bold"  to='/addJobs'>Add Job</NavLink>
         </li>
         <li>
             <NavLink className="font-bold"  to='/mypostedjobs'>My Posted Jobs</NavLink>
