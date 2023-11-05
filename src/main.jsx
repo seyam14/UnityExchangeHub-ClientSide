@@ -16,7 +16,6 @@ import AddJobs from './Pages/AddJobs/AddJobs';
 import MyPostedJobs from './Pages/MyPostedJobs/MyPostedJobs.JSX';
 
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +41,8 @@ const router = createBrowserRouter([
     },
     {
       path: '/mypostedjobs',
-      element: <MyPostedJobs></MyPostedJobs>
+      element: <MyPostedJobs></MyPostedJobs>,
+      loader : () => fetch('http://localhost:5000/addJobs'),
   },
     ]
     

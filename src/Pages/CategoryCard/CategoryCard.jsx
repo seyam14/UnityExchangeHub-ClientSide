@@ -17,7 +17,7 @@ const CategoryCard = ({cart}) => {
         <h2 ><span className="font-bold "> DeadLine:</span> {DeadLine}</h2>
         <h2><span className="font-bold "> Price range: </span>{MinumumPrice} -{MaximumPrice}</h2>
         <h2><span className="font-bold ">Description: </span>{Description}</h2>
-        <Link >
+        <Link  >
           <button className="btn btn-neutral">Bid Now</button>
         </Link>
       </div>
