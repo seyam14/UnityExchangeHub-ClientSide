@@ -17,6 +17,8 @@ import MyPostedJobs from './Pages/MyPostedJobs/MyPostedJobs.JSX';
 import JobDetalisPage from './Pages/JobDetalisPage/JobDetalisPage';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import UpdateJobs from './Pages/UpdateJobs/UpdateJobs';
+import MyBids from './Pages/MyBids/MyBids';
+import BidRequests from './Pages/BidRequests/BidRequests';
 
 
 const router = createBrowserRouter([
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
       {
           path: '/register',
           element: <Register></Register>
+      },
+      {
+        path: '/mybids',
+        element: <PrivateRoute><MyBids></MyBids></PrivateRoute>
+      },
+    {
+      path: '/bidrequests',
+      element: <PrivateRoute><BidRequests></BidRequests></PrivateRoute>
       },
       {
         path: '/addJobs',
