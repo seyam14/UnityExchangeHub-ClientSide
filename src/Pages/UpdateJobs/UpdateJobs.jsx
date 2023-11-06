@@ -14,7 +14,7 @@ const UpdateJobs = () => {
         event.preventDefault();
 
         const form = event.target;
-
+        const email = form.email.value;
         const jobTitle = form.jobTitle.value;
         const  DeadLine = form. DeadLine.value;
         const category = form.category.value;
@@ -22,7 +22,7 @@ const UpdateJobs = () => {
         const MaximumPrice = form.MaximumPrice.value;
         const MinumumPrice = form. MinumumPrice.value;
 
-        const UpdateJob={ jobTitle, DeadLine, category,  Description, MaximumPrice,MinumumPrice  }
+        const UpdateJob={ jobTitle,email, DeadLine, category,  Description, MaximumPrice,MinumumPrice  }
 
         console.log(UpdateJob);
 
