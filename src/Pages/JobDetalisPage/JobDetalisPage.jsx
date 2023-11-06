@@ -14,15 +14,12 @@ const JobDetalisPage = () => {
   
       return (
         <div>
-        <div className="card lg:card-side bg-sky-300 md:h-[250px] my-4 shadow-xl">
+        <div className="card lg:card-side bg-sky-300 md:h-[200px] my-4 shadow-xl">
          <div className="card-body">
           <h2 className="card-title "><span className="font-bold ">Name: </span> {jobTitle}</h2>
           <h2 ><span className="font-bold "> DeadLine:</span> {DeadLine}</h2>
           <h2><span className="font-bold "> Price range: </span>{MinumumPrice} -{MaximumPrice}</h2>
           <h2><span className="font-bold ">Description: </span>{Description}</h2>
-          <div className="m-6">
-          <button className="btn btn-primary">Bid Now</button>
-         </div>
         </div>
         </div>
        <div className="bg-sky-300 p-10 shadow-xl mb-2">

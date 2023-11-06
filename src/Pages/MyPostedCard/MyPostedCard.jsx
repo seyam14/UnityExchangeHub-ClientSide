@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line no-unused-vars
 const MyPostedCard = ({ item, card, setAddCard }) => {
   const {
     _id,
