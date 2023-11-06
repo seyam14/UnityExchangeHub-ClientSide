@@ -24,7 +24,7 @@ const UpdateJobs = () => {
         console.log(UpdateJob);
 
         // send data to the server
-        fetch(`https://brand-shop-server-side-backend.vercel.app/addProducts/${_id}`, {
+        fetch(`http://localhost:5000/addJobs/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
