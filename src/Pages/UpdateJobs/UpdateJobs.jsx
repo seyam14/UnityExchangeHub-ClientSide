@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const UpdateJobs = () => {
     const job= useLoaderData();
+    const {user}=useContext(AuthContext)
 
     const { _id, jobTitle, DeadLine, category,  Description, MaximumPrice,MinumumPrice } = job;
 
@@ -49,7 +52,7 @@ const UpdateJobs = () => {
 
     return (
         <div className="bg-green-300 p-24">
-        <h2 className="text-3xl font-extrabold">Add job </h2>
+        <h2 className="text-3xl font-extrabold">Update job </h2>
         
         
         <form onSubmit={handleUpdateJob } >
@@ -59,7 +62,7 @@ const UpdateJobs = () => {
                         <span className="label-text"> E-mail</span>
                     </label>
                     <label className="input-group">
-                        <input type="email" name="email" placeholder="email" className="input input-bordered w-full" />
+                        <input type="email" name="email" value={user.email} readOnly placeholder="email" className="input input-bordered w-full" />
                     </label>
                 </div>
                 <div className="form-control md:w-1/2 ml-4">
@@ -132,7 +135,7 @@ const UpdateJobs = () => {
             </div>
             
             {/* button */}
-            <input type="submit" value="Add Job" className="btn btn-block" />
+            <input type="submit" value="Update Job" className="btn btn-block" />
 
         </form>
     </div>

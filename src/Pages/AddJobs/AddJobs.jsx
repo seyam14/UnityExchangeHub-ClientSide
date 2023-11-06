@@ -1,7 +1,11 @@
 
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddJobs = () => {  
+    const {user}=useContext(AuthContext)
+    
     const handleAddJob = e => {
         e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -17,7 +21,7 @@ const AddJobs = () => {
     console.log(newJob);
 
          // send data to the server
-         fetch('http://localhost:5000/addJobs', {
+         fetch(`http://localhost:5000/addJobs`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +54,7 @@ const AddJobs = () => {
                         <span className="label-text"> E-mail</span>
                     </label>
                     <label className="input-group">
-                        <input type="email" name="email" placeholder="email" className="input input-bordered w-full" />
+                        <input type="email" name="email"  placeholder="email" value={user.email} readOnly className="input input-bordered w-full" />
                     </label>
                 </div>
                 <div className="form-control md:w-1/2 ml-4">

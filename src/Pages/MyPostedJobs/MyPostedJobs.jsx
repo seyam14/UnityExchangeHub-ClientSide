@@ -1,39 +1,26 @@
-import { Link, useLoaderData } from "react-router-dom";
-
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useState } from "react";
+import MyPostedCard from "../MyPostedCard/MyPostedCard";
 
 const MyPostedJobs = () => {
-    const item = useLoaderData();
-       
-    const  {
-        _id,
-        jobTitle,
-        DeadLine,
-        Description,
-        MaximumPrice,
-        MinumumPrice,
-      }=item;
-    return (
-        <div>
-        <div className="card lg:card-side bg-sky-300 md:h-[250px] my-4 shadow-xl">
-         <div className="card-body">
-          <h2 className="card-title "><span className="font-bold ">jobTitle: </span> {jobTitle}</h2>
-          <h2 ><span className="font-bold "> DeadLine:</span> {DeadLine}</h2>
-          <h2><span className="font-bold "> Price range: </span>{MinumumPrice} -{MaximumPrice}</h2>
-          <h2><span className="font-bold ">Description: </span>{Description}</h2>
-          <div className="flex gap-4">
-            <Link to={`/updateJobs/${_id}`}>
-            <button className="btn btn-primary">Update </button>
-            </Link>
-            <Link >
-            <button className="btn btn-accent w-[153px]">Delete</button>
-            </Link>
-         </div>
-        </div>
-        </div>
-       
-        </div>  
-      );
-    };
+  const { user } = useContext(AuthContext);
+  const [card, setAddCard] = useState([]);
+  console.log(card);
+  const url = `http://localhost:5000/addJobs?email=${user?.email}`;
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setAddCard(data));
+  }, []);
 
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-16">
+      {card?.map((data) => (
+        <MyPostedCard key={data._id} item={data} card={card} setAddCard={setAddCard} />
+      ))}
+    </div>
+  );
+};
 
 export default MyPostedJobs;
