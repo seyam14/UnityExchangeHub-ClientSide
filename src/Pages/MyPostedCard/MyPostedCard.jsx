@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line no-unused-vars
-const MyPostedCard = ({ item, card, setAddCard }) => {
+const MyPostedCard = ({ item, card, setAddCard ,handleDelete }) => {
   const {
     _id,
     jobTitle,
@@ -34,7 +34,7 @@ const MyPostedCard = ({ item, card, setAddCard }) => {
               <button className="btn btn-primary">Update</button>
             </Link>
             <Link>
-              <button className="btn btn-accent w-[153px]">Delete</button>
+              <button onClick={() => handleDelete(_id)} className="btn btn-accent w-[153px]">Delete</button>
             </Link>
           </div>
         </div>
