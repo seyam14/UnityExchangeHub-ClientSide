@@ -14,7 +14,7 @@ const ReviewsAndRatings = () => {
       comment: 'Excellent work.',
     },
     {
-        id: 2,
+        id: 3,
         user: 'Nazmul Islam',
         rating: 5,
         comment: 'Very professional Work .',

@@ -1,18 +1,18 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useState, useEffect } from "react";
 import BidingRow from "../BidingRow/BidingRow";
 
 const MyBids = () => {
-    const { user } = useContext(AuthContext);
-
     const [myBids, setMyBids] = useState([]);
+    console.log(myBids);
 
-    const url = `http://localhost:5000/mybids?email=${user?.email}`;
+    const url = "http://localhost:5000/mybids";
+
     useEffect(() => {
         fetch(url)
             .then((res) => res.json())
-            .then((data) => setMyBids(data));
-    }, [url]);
+            .then((data) => setMyBids(data))
+            .catch((error) => console.error("Error fetching bids: ", error));
+    }, []); 
 
     return (
         <div>
@@ -20,11 +20,6 @@ const MyBids = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
                             <th>Job Title</th>
                             <th>Email</th>
                             <th>DeadLine</th>
@@ -32,9 +27,9 @@ const MyBids = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {Array.isArray(myBids) ? (
-                            myBids.map((Biding) => (
-                                <BidingRow key={Biding._id} Biding={Biding}></BidingRow>
+                        {Array.isArray(myBids) && myBids.length > 0 ? (
+                            myBids.map((bid) => (
+                                <BidingRow key={bid._id} bid={bid}></BidingRow>
                             ))
                         ) : (
                             <tr>

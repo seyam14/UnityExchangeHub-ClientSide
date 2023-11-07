@@ -1,5 +1,5 @@
-const BidingRow = ({ Biding }) => {
-    const { JobTitle, Email, DeadLine, status } = Biding;
+const BidingRow = ({ bid}) => {
+    const { JobTitle, Email, DeadLine, status } = bid;
     return (
         <tr>
             <td>
