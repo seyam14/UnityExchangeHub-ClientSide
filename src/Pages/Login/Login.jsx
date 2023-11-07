@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import {FaGoogle } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -12,7 +14,15 @@ const Login = () => {
 
 
     const handleGoogleLogin = () => {
-        googleSignIn().then((result) => console.log(result.logUser));
+        googleSignIn()
+        .then(result =>{
+            const user = result.user;
+            Swal.fire("Login Successful!", "You are now logged in.", "success");
+            Navigate(location?.state ? location.state: '/')
+          })
+          .catch(error =>{
+            Swal.fire("Login Error", "Please add a valid email and password.", "error");
+          })
       };
 
     const handleLogin = e => {
@@ -25,6 +35,11 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: 'You have successfully logged in!',
+                });
                 Navigate(location?.state ? location?.state : '/')
                 const user = {
                     email,
