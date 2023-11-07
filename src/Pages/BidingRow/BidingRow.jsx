@@ -1,5 +1,10 @@
+
 const BidingRow = ({ bid}) => {
+
     const { JobTitle, Email, DeadLine, status } = bid;
+    
+    console.log(bid);
+    console.log(JobTitle);
     return (
         <tr>
             <td>
