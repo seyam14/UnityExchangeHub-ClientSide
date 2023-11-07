@@ -24,21 +24,21 @@ const Category = () => {
         </TabList>
     
         <TabPanel>
-        <div className="grid grid-cols-2 gap-5 mx-auto p-5 lg:ml-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mx-auto p-5 lg:ml-32">
             {filter?.map((cart) => (
               <CategoryCard cart={cart} key={cart.id}></CategoryCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid grid-cols-2 gap-5 mx-auto p-5 lg:ml-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mx-auto p-5 lg:ml-32">
             {filter2?.map((cart) => (
               <CategoryCard cart={cart} key={cart.id}></CategoryCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="grid grid-cols-2 gap-5 mx-auto p-5 lg:ml-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mx-auto p-5 lg:ml-32">
             {filter3?.map((cart) => (
               <CategoryCard cart={cart} key={cart.id}></CategoryCard>
             ))}
