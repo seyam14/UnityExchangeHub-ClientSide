@@ -21,6 +21,7 @@ const BidRequests = () => {
                     <thead>
                         <tr>
                             <th>Job Title</th>
+                             <th>Price</th>
                             <th>Email</th>
                             <th>DeadLine</th>
                             <th>Status</th>

@@ -4,7 +4,7 @@ import axios from "axios";
 const BidRequestsCard = ({bid}) => {
     console.log(bid);
      
-    const { _id,JobTitle, Email, DeadLine, status } = bid;
+    const { _id,JobTitle,Price, Email, DeadLine, status } = bid;
      //     
     const handelAkcept = (id) => {
         const status = { status:"progress" };
@@ -26,6 +26,7 @@ const BidRequestsCard = ({bid}) => {
         <td>
             {JobTitle}
         </td>
+        <td>{Price}</td>
         <td>{Email}</td>
         <td>{DeadLine}</td>
         <td>{status}</td>
