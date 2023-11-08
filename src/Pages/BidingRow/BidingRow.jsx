@@ -11,7 +11,7 @@ const BidingRow = ({ bid}) => {
     const handelConfirm = (id) => {
         const status = { status:"complete" };
         axios
-          .patch(`http://localhost:5000/mybids/${id}`, status)
+          .patch(`https://b8a11-server-side-seyam14.vercel.app/mybids/${id}`, status)
           .then((response) => console.log(response))
           .catch((error) => console.log(error));
       };

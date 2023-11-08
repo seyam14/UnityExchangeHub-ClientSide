@@ -27,7 +27,7 @@ const UpdateJobs = () => {
         console.log(UpdateJob);
 
         // send data to the server
-        fetch(`http://localhost:5000/addJobs/${_id}`, {
+        fetch(`https://b8a11-server-side-seyam14.vercel.app/addJobs/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

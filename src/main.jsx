@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader : () => fetch('http://localhost:5000/addJobs'),
+            loader : () => fetch('https://b8a11-server-side-seyam14.vercel.app/addJobs'),
         },
         {
           path: '/login',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
     {
       path: '/jobDetails/:id',
       element: <PrivateRoute><JobDetalisPage></JobDetalisPage></PrivateRoute> ,
-      loader: ({ params }) => fetch(`http://localhost:5000/addJobs/${params.id}`)
+      loader: ({ params }) => fetch(`https://b8a11-server-side-seyam14.vercel.app/addJobs/${params.id}`)
    },
     {
       path: '/mypostedjobs',
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
   {
     path: '/updateJobs/:id',
     element: <UpdateJobs></UpdateJobs> ,
-    loader: ({ params }) => fetch(`http://localhost:5000/addJobs/${params.id}`)
+    loader: ({ params }) => fetch(`https://b8a11-server-side-seyam14.vercel.app/addJobs/${params.id}`)
  },
     ]
     

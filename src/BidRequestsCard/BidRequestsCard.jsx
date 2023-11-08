@@ -20,7 +20,7 @@ const BidRequestsCard = ({ bid }) => {
 
   const updateBidStatus = (id, newStatus) => {
     axios
-      .patch(`http://localhost:5000/mybids/${id}`, { status: newStatus })
+      .patch(`https://b8a11-server-side-seyam14.vercel.app/mybids/${id}`, { status: newStatus })
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
   };

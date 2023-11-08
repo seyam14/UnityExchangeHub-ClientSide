@@ -11,7 +11,7 @@ const MyPostedJobs = () => {
   const [card, setAddCard] = useState([]);
 
   console.log(card);
-  const url = `http://localhost:5000/addJobs?email=${user?.email}`;
+  const url = `https://b8a11-server-side-seyam14.vercel.app/addJobs?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -37,7 +37,7 @@ const MyPostedJobs = () => {
         }
       })
     if (proceed) {
-        fetch(`http://localhost:5000/addJobs/${id}`, {
+        fetch(`https://b8a11-server-side-seyam14.vercel.app/addJobs/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

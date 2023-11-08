@@ -35,7 +35,7 @@ const JobDetalisPage = () => {
             availavelvid: true,
         };
         console.log(cart);
-        fetch(`http://localhost:5000/mybids`, {
+        fetch(`https://b8a11-server-side-seyam14.vercel.app/mybids`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -49,7 +49,7 @@ const Login = () => {
                     text: 'You have successfully logged in!',
                 });
                 // get acess token
-                axios.post('http://localhost:5000/jwt', user)
+                axios.post('https://b8a11-server-side-seyam14.vercel.app/jwt', user)
                 .then(res => {
                     console.log(res.data)
                     // if (res.data.success) {

@@ -6,7 +6,7 @@ const BidRequests = () => {
     const [myBids, setMyBids] = useState([]);
     console.log(myBids);
 
-    const url = "http://localhost:5000/mybids";
+    const url = "https://b8a11-server-side-seyam14.vercel.app/mybids";
 
     useEffect(() => {
         fetch(url)
