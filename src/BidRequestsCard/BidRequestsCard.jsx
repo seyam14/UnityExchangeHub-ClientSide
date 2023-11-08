@@ -34,7 +34,7 @@ const BidRequestsCard = ({bid}) => {
             <button onClick={() =>handelAkcept(_id)} className="btn btn-secondary">Accept</button>
         </td>
         <td>
-            <button onClick={() =>handelReject(_id)} className="btn btn-secondary">Reject</button>
+            <button onClick={() =>handelReject(_id)} className="btn btn-accent">Reject</button>
         </td>
     </tr>
 );
