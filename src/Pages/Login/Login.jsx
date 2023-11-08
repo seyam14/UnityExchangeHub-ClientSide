@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import {FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 
 const Login = () => {
@@ -17,6 +18,7 @@ const Login = () => {
         googleSignIn()
         .then(result =>{
             const user = result.user;
+            console.log(user);
             Swal.fire("Login Successful!", "You are now logged in.", "success");
             Navigate(location?.state ? location.state: '/')
           })
@@ -30,33 +32,30 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         signInUser(email, password)
             .then(result => {
-                console.log(result.user);
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                // const user = { email };
+                const user = {
+                    email,
+                    lastLoggedAt: result.user?.metadata?.lastSignInTime
+                }
                 Swal.fire({
                     icon: 'success',
                     title: 'Login Successful',
                     text: 'You have successfully logged in!',
                 });
-                Navigate(location?.state ? location?.state : '/')
-                const user = {
-                    email,
-                    lastLoggedAt: result.user?.metadata?.lastSignInTime
-                }
-                // update last logged at in the database
-                fetch('http://localhost:5000/user', {
-                    method: 'PATCH',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
+                // get acess token
+                axios.post('http://localhost:5000/jwt', user)
+                .then(res => {
+                    console.log(res.data)
+                    // if (res.data.success) {
+                    //     Navigate(location?.state ? location?.state : '/')
+                    // }
                 })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                    })
             })
             .catch(error => {
                 console.error(error);
