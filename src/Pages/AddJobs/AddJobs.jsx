@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import {Helmet} from "react-helmet";
 
 const AddJobs = () => {  
     const {user}=useContext(AuthContext)
@@ -45,6 +46,9 @@ const AddJobs = () => {
 
     return (
         <div className="bg-green-300 p-24">
+            <Helmet>
+                <title>UEHub|Add Job</title>
+            </Helmet>
         <h2 className="text-3xl font-extrabold">Add job </h2>
         
         <form onSubmit={handleAddJob } >

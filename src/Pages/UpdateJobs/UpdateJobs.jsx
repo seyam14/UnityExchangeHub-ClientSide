@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import {Helmet} from "react-helmet";
 
 
 const UpdateJobs = () => {
@@ -52,6 +53,9 @@ const UpdateJobs = () => {
 
     return (
         <div className="bg-green-300 p-24">
+            <Helmet>
+                <title>UEHub|Update Jobs</title>
+            </Helmet>
         <h2 className="text-3xl font-extrabold">Update job </h2>
         
         

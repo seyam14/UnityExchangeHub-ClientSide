@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BidRequestsCard from "../../BidRequestsCard/BidRequestsCard";
+import {Helmet} from "react-helmet";
 
 
 const BidRequests = () => {
@@ -16,6 +17,9 @@ const BidRequests = () => {
     }, []); 
     return (
         <div>
+            <Helmet>
+                <title>UEHub|Bid Request</title>
+            </Helmet>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import BidingRow from "../BidingRow/BidingRow";
+import {Helmet} from "react-helmet";
 
 const MyBids = () => {
     const [myBids, setMyBids] = useState([]);
@@ -16,6 +17,9 @@ const MyBids = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>UEHub|My bids</title>
+            </Helmet>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>

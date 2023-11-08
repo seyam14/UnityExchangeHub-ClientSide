@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import {Helmet} from "react-helmet";
 
 const JobDetalisPage = () => {
     const { user } = useContext(AuthContext);
@@ -62,6 +63,9 @@ const JobDetalisPage = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>UEHub|Job Detalis Page</title>
+            </Helmet>
             <div className="card lg:card-side bg-sky-300 md:h-[200px] my-4 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title "><span className="font-bold ">Name: </span> {jobTitle}</h2>

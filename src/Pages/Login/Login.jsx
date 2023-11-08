@@ -5,6 +5,8 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import {FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import axios from "axios";
+import {Helmet} from "react-helmet";
+
 
 
 const Login = () => {
@@ -49,22 +51,47 @@ const Login = () => {
                     text: 'You have successfully logged in!',
                 });
                 // get acess token
-                axios.post('https://b8a11-server-side-seyam14.vercel.app/jwt', user)
-                .then(res => {
-                    console.log(res.data)
-                    // if (res.data.success) {
-                    //     Navigate(location?.state ? location?.state : '/')
-                    // }
+            //     axios.post('https://b8a11-server-side-seyam14.vercel.app/jwt', user)
+            //     .then(res => {
+            //         console.log(res.data)
+            //         // if (res.data.success) {
+            //         //     Navigate(location?.state ? location?.state : '/')
+            //         // }
+            //     })
+            // })
+            // .catch(error => {
+            //     console.error(error);
+            // })
+            axios.post("https://b8a11-server-side-seyam14.vercel.app/jwt", 
+                    { email },
+                    { withCredentials: true }
+                )
+                .then((res) => {
+                    console.log(res.data);
+                    if (res.data.success) {
+                        Navigate(location.state || '/');
+                    }
                 })
+                .catch((error) => {
+                    console.error(error);
+                });
             })
-            .catch(error => {
-                console.error(error);
-            })
+            .catch(err => {
+                console.error(err);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: err.message,
+                });
+            });
     }
         
 
     return (
         <div className="hero min-h-screen bg-base-500">
+            <Helmet>
+                <title>UEHub|Login</title>
+            </Helmet>
         <div className="hero-content flex-col ">
             <div className="text-center ">
                 <h1 className="text-5xl font-bold"> Please Login </h1>

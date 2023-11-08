@@ -3,6 +3,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useState } from "react";
 import MyPostedCard from "../MyPostedCard/MyPostedCard";
 import Swal from "sweetalert2";
+import {Helmet} from "react-helmet";
 
 const MyPostedJobs = () => {
 
@@ -62,6 +63,9 @@ const MyPostedJobs = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-16">
+      <Helmet>
+        <title>UEHub|MyPostedJobs</title>
+      </Helmet>
       {card?.map((data) => (
         <MyPostedCard key={data._id} item={data} card={card} handleDelete={handleDelete} setAddCard={setAddCard} />
       ))}
