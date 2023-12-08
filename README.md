@@ -27,8 +27,8 @@
 
  ## Technology:
    - **Front-end:** React
-    - **Frameworks:** Tailwind, DaisyUI
-    - **Backend:**  Node.js,Express.js
-    - **Database:**  MongoDB
-    - **Tools:**  Github, Netlify, Firebase 
+   - **Frameworks:** Tailwind, DaisyUI
+   - **Backend:**  Node.js,Express.js
+   - **Database:**  MongoDB
+   - **Tools:** Netlify, Firebase 
 
