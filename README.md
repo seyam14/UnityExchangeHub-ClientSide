@@ -1,4 +1,4 @@
-## UnityExchangeHub - Onlinemarketing
+## UnityExchangeHub - Online market place
 
 ## [ live link](https://resplendent-cascaron-645470.netlify.app)
 
