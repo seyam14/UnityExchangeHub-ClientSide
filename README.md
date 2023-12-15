@@ -1,6 +1,6 @@
-## UnityExchangeHub - Online market place
+## UnityExchangeHub - Online marketplace
 
-## [ live link](https://resplendent-cascaron-645470.netlify.app)
+## [ live link](https://stellular-ganache-b48a1c.netlify.app)
 
 ## [Server side ](https://github.com/seyam14/UnityExchangeHub-Server_Side)
 
